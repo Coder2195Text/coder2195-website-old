@@ -10,7 +10,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       localStorage.setItem("language", navigator.language.split("-")[0])
     }
     setLanguage(localStorage.getItem("language") as LANGUAGES);
-  })
+  },[])
   return <Component {...pageProps} language={language} setLanguage={setLanguage} />
 }
 
