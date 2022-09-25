@@ -1,0 +1,12 @@
+{
+    "$schema": "http://json-schema.org/schema",
+    "required": [
+        "homeTitle"
+    ],
+    "properties": {
+        "homeTitle": {
+            "type": "string",
+            "description": "title on home page"
+        }
+    }
+}
