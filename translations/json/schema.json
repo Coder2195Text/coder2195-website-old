@@ -1,12 +1,22 @@
 {
     "$schema": "http://json-schema.org/schema",
     "required": [
-        "homeTitle"
+        "homeTitle",
+        "homeHeading",
+        "flip"
     ],
     "properties": {
+        "flip": {
+            "type": "boolean",
+            "description": "flip the text?"
+        },
+        "homeHeading": {
+            "type": "string",
+            "description": "heading on home page"
+        }, 
         "homeTitle": {
             "type": "string",
-            "description": "title on home page"
+            "description": "title on home page that appears on the tab"
         }
     }
 }

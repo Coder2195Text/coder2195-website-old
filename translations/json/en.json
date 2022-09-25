@@ -1,4 +1,6 @@
 {
     "$schema": "./schema.json",
-    "homeTitle": "Coder2195's Website"
+    "flip": false,
+    "homeHeading": "Coder2195's Website",
+    "homeTitle": "Coder2195 - Home"
 }

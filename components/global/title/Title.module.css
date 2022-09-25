@@ -10,8 +10,7 @@
 .title {
     text-align: center;
     display: flex;        
-    flex-basis: 100%;
-    animation: marquee-reset;
+    width: 100%;
     animation: marquee 8s linear infinite;
     font-family: Manrope;
     font-size: 8vh;
