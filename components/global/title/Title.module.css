@@ -1,32 +1,5 @@
-.wrapper {
-    width: 100%;
-    margin: 0 auto;
-    white-space: nowrap;
-    overflow: hidden;
-    box-sizing: border-box;
-    display: inline-flex;    
-}
-
 .title {
     text-align: center;
-    display: flex;        
-    width: 100%;
-    animation: marquee 8s linear infinite;
     font-family: Manrope;
     font-size: 8vh;
-}
-
-@keyframes marquee {
-    0% {
-        transform: translate(0%, 0);
-    }    
-    50% {
-        transform: translate(-100%, 0);
-    }
-    50.001% {
-        transform: translate(100%, 0);
-    }
-    100% {
-        transform: translate(0%, 0);
-    }
 }

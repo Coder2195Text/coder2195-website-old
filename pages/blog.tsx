@@ -11,7 +11,7 @@ interface Props {
 
 export const getStaticProps: GetStaticProps = async() =>{
 
-    const { posts } = await fetchBlogPreviews();
+    const posts = await fetchBlogPreviews();
     return {
         props: {
             posts

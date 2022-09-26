@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Title from '../components/global/title/Title'
 import { FC, useContext } from 'react'
 import styles from '../styles/Home.module.css'
+import Link from '../components/global/link/Link'
 
 const Home: FC = () => {
 	//to do add translations
@@ -13,6 +14,7 @@ const Home: FC = () => {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<Title>Coder2195's Website</Title>
+			<Link href='https://scam.com'>Scam</Link>
 		</div>
 	)
 }

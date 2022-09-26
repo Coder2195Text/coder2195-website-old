@@ -1,0 +1,30 @@
+.link {
+    font-family: Aqua;
+    font-size: 20pt;
+    background-color: gray;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 10px;
+    transition: background-color .5s ease-in-out;
+}
+
+.link:hover {
+    background-color: transparent;
+}
+
+.link span {
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    background-image: linear-gradient(#ffffff, #ffffff);
+    background-size: 0% 0.1em;
+    background-position-y: 100%;
+    background-position-x: 0%;
+    background-repeat: no-repeat;
+    transition: background-size 0.2s ease-in-out;
+}
+
+.link:hover span, .link:active span {
+    background-size: 100% 0.1em;
+}

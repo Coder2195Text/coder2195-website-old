@@ -6,9 +6,8 @@ interface Props {
 }
 
 const Title: FC<Props> = ({ children }) => {
-    return <span className={styles.wrapper}>
-        <h1 className={styles.title}>{children}</h1>
-    </span>
+    return <h1 className={styles.title}>{children}</h1>
+    
 }
 
 export default Title;

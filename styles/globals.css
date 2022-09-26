@@ -7,10 +7,16 @@
   font-family: Anonymice Nerd;
   src: url("/fonts/anonymice-nerd.ttf");
 }
+
+@font-face {
+  font-family: Aqua;
+  src: url("/fonts/aqua.ttf");
+}
 html,
 body {
+  text-align: center;
   padding: 0;
-  margin: 0;
+  margin: 0 auto;
 }
 
 a {
