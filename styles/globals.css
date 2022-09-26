@@ -2,6 +2,11 @@
   font-family: Manrope;
   src: url("/fonts/manrope.ttf");
 }
+
+@font-face {
+  font-family: Anonymice Nerd;
+  src: url("/fonts/anonymice-nerd.ttf");
+}
 html,
 body {
   padding: 0;
