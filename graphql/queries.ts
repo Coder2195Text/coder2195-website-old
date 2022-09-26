@@ -24,6 +24,7 @@ export async function fetchBlogPost(slug: string) {
         query ($slug: String!){
             post(where: { slug: $slug }) {
                 title
+                coverImage
                 content {
                     markdown
                 }

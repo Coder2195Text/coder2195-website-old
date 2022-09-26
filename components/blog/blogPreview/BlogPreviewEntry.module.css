@@ -1,11 +1,11 @@
 .entry {
     width: 90vw;
-    height: fit-content;
+    max-height: 50vw;
     margin-bottom: 20px;
     border-radius: 20px;
     background-color: gray;
     display: inline-block;
-    transition: background-color .5s ease-in-out;
+    transition: background-color .5s linear;
 }
 
 .title {
@@ -19,10 +19,14 @@
 
 .entry:hover .excerpt, .entry:active .excerpt{
     display: block;
+    opacity: 1;
 }
 
 .excerpt {
     display: none;
+    transition: opacity 1s ease-in-out;
+    opacity: 0%;
+    transition: max-height 1s linear;
 }
 
 .excerptContent {
