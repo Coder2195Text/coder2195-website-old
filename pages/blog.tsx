@@ -8,7 +8,7 @@ interface Props {
     posts: Array<IPost>
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
 
     const { posts } = await fetchBlogPreviews();
     return {

@@ -10,7 +10,7 @@ export async function fetchBlogPreviews(){
     return await hygraph.request<{posts: Array<IPost>}>(`
         {
             posts {
-              slug
+              id
               title
             }
         }
