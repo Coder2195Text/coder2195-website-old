@@ -14,6 +14,8 @@ const Home: FC = () => {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<Title>Coder2195's Website</Title>
+			<Link href='/blog'>Blog</Link>
+			<br/>
 			<Link href='https://scam.com'>Scam</Link>
 		</div>
 	)

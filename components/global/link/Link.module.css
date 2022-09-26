@@ -1,30 +1,38 @@
 .link {
+    margin-bottom: 20px;
     font-family: Aqua;
-    font-size: 20pt;
+    display: inline-block;
+    --padding-x: 30px;
+    --padding-y: 20px;
+    --font-size: 20pt;
+    border-radius: 20px;
+    position: relative;
+    font-size: var(--font-size);
+    padding: var(--padding-y) var(--padding-x);
+    transition: all .5s ease-out;
+    border: none;
     background-color: gray;
-    padding: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
-    border-radius: 10px;
-    transition: background-color .5s ease-in-out;
+}
+
+.link::before {
+    content: "";
+    width: calc(100% - 2 * var(--padding-x));
+    transform: scaleX(0);
+
+    height: 5px;
+    position: absolute;
+    top: calc(var(--padding-y) + var(--font-size) + 5px);
+
+    background-color: white;
+    transform-origin: bottom left;
+    transition: transform 0.25s ease-out;
+}
+
+.link:hover:before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }
 
 .link:hover {
     background-color: transparent;
-}
-
-.link span {
-    width: 100%;
-    height: 100%;
-    text-decoration: none;
-    background-image: linear-gradient(#ffffff, #ffffff);
-    background-size: 0% 0.1em;
-    background-position-y: 100%;
-    background-position-x: 0%;
-    background-repeat: no-repeat;
-    transition: background-size 0.2s ease-in-out;
-}
-
-.link:hover span, .link:active span {
-    background-size: 100% 0.1em;
 }

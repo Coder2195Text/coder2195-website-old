@@ -8,7 +8,7 @@ interface Props {
 }
 
 const Link: FC<Props> = ({ href, children }) => {
-    return <NextLink href={href}><a className={styles.link} ><span>{children}</span></a></NextLink>
+    return <NextLink href={href}><a className={styles.link} >{children}</a></NextLink>
 }
 
 export default Link;

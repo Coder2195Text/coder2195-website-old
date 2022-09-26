@@ -1,6 +1,8 @@
 import { GraphQLClient } from 'graphql-request';
 import { GetStaticProps } from 'next';
 import { FC } from 'react';
+import BlogPreview from '../components/blog/blogPreview/BlogPreview';
+import Title from '../components/global/title/Title';
 import { fetchBlogPreviews } from '../graphql/queries';
 import { IPost } from '../graphql/types';
 
@@ -21,7 +23,11 @@ export const getStaticProps: GetStaticProps = async() =>{
 }
 
 const Blog: FC<Props> = ({posts}) => {
-    return <>{JSON.stringify(posts)}</>
+    console.log(posts)
+    return <div>
+        <Title>Blog Posts</Title>
+        <BlogPreview posts={posts}/>
+    </div>
 }
 
 export default Blog;

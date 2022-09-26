@@ -1,0 +1,31 @@
+.entry {
+    width: 90vw;
+    height: fit-content;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    background-color: gray;
+    display: inline-block;
+    transition: background-color .5s ease-in-out;
+}
+
+.title {
+    font-family: Aqua;
+    font-size: 20pt;
+}
+
+.entry:hover, .entry:active {
+    background-color: rgb(88, 88, 88);
+}
+
+.entry:hover .excerpt, .entry:active .excerpt{
+    display: block;
+}
+
+.excerpt {
+    display: none;
+}
+
+.excerptContent {
+    font-family: Anonymice Nerd;
+    font-size: 16pt;
+}

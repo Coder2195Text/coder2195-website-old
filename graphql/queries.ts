@@ -7,21 +7,20 @@ const hygraph = new GraphQLClient(
 
 
 export async function fetchBlogPreviews() {
-    const {posts} = await hygraph.request<{ posts: Array<IPost> }>(`
+    const { posts } = await hygraph.request<{ posts: IPost[] }>(`
         query {
             posts {
-              id
-              excerpt
-              title
+                slug
+                excerpt
+                title
             }
         }
     `)
-    console.log(posts)
     return posts;
 }
 
 export async function fetchBlogPost(slug: string) {
-    const {post} = await hygraph.request<{ post: IPost }>(`
+    const { post } = await hygraph.request<{ post: IPost }>(`
         query ($slug: String!){
             post(where: { slug: $slug }) {
                 title
@@ -31,17 +30,17 @@ export async function fetchBlogPost(slug: string) {
                 date
             }
         }
-    `, {slug}) 
+    `, { slug })
     return post;
 }
 
-export async function fetchBlogSlugs(){
-    const {posts} = await hygraph.request<{posts: Array<IPost>}>(`
+export async function fetchBlogSlugs() {
+    const { posts } = await hygraph.request<{ posts: IPost[] }>(`
         query {
             posts {
                 slug
             }
         }
     `)
-    return posts.map((post:IPost)=>{return post.slug})
+    return posts.map((post: IPost) => { return post.slug })
 }
