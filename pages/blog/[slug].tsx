@@ -1,6 +1,5 @@
 import { GetStaticProps } from "next";
 import { FC } from "react";
-import CoverImage from "../../components/blog/coverImage/CoverImage";
 import Title from "../../components/global/title/Title";
 import { fetchBlogSlugs, fetchBlogPost } from "../../graphql/queries";
 import { IPost } from "../../graphql/types";
