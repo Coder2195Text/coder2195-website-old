@@ -41,6 +41,8 @@ const BlogPostPage: FC<Props> = ({post}) => {
     return <>
         <Head>
             <title>{`Blog: ${post.title}`}</title>
+            <meta property="og:title" content={`Coder2195 - Blog: ${post.title}`} />
+            <meta property="og:description" content={post.excerpt ? post.excerpt : `Check out the blog "${post.title}" from Coder2195!`} />
         </Head>
         <Title>{post.title}</Title>
         {post.coverImage ? <Image alt="" width={post.coverImage.width} height={post.coverImage.height} src={post.coverImage.url}/> : <></>}

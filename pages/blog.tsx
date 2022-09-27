@@ -27,6 +27,8 @@ const Blog: FC<Props> = ({posts}) => {
     return <div>
         <Head>
             <title>Coder2195 - Blog</title>
+            <meta property="og:title" content="Coder2195 - Blog" />
+            <meta property="og:description" content="Check out some of Coder2195's blog posts!!!" />
         </Head>
         <Title>Blog Posts</Title>
         <BlogPreview posts={posts}/>
