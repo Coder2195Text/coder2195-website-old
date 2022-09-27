@@ -2,12 +2,11 @@ import { gql, GraphQLClient } from "graphql-request";
 import { IPost } from "./types";
 
 const hygraph = new GraphQLClient(
-    'https://api-us-east-1.hygraph.com/v2/cl8hzzoiu59rq01tccufrg18c/master'
+  "https://api-us-east-1.hygraph.com/v2/cl8hzzoiu59rq01tccufrg18c/master"
 );
 
-
 export async function fetchBlogPreviews() {
-    const { posts } = await hygraph.request<{ posts: IPost[] }>(`
+  const { posts } = await hygraph.request<{ posts: IPost[] }>(`
         query {
             posts(orderBy: createdAt_DESC) {
                 slug
@@ -15,12 +14,13 @@ export async function fetchBlogPreviews() {
                 title
             }
         }
-    `)
-    return posts;
+    `);
+  return posts;
 }
 
 export async function fetchBlogPost(slug: string) {
-    const { post } = await hygraph.request<{ post: IPost }>(`
+  const { post } = await hygraph.request<{ post: IPost }>(
+    `
         query ($slug: String!){
             post(where: { slug: $slug }) {
                 title
@@ -41,17 +41,21 @@ export async function fetchBlogPost(slug: string) {
                 }
             }
         }
-    `, { slug })
-    return post;
+    `,
+    { slug }
+  );
+  return post;
 }
 
 export async function fetchBlogSlugs() {
-    const { posts } = await hygraph.request<{ posts: IPost[] }>(`
+  const { posts } = await hygraph.request<{ posts: IPost[] }>(`
         query {
             posts {
                 slug
             }
         }
-    `)
-    return posts.map((post: IPost) => { return post.slug })
+    `);
+  return posts.map((post: IPost) => {
+    return post.slug;
+  });
 }

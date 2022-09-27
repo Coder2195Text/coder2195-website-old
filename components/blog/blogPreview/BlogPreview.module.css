@@ -1,35 +1,37 @@
 .entry {
-    width: 90vw;
-    margin-bottom: 20px;
-    border-radius: 20px;
-    background-color: darkslategray;
-    display: inline-block;
-    transition: background-color .5s linear;
+  width: 90vw;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  background-color: darkslategray;
+  display: inline-block;
+  transition: background-color 0.5s linear;
 }
 
 .title {
-    font-family: Aqua;
-    font-size: 24pt;
-    font-weight: bold;
+  font-family: Aqua;
+  font-size: 24pt;
+  font-weight: bold;
 }
 
-.entry:hover, .entry:active {
-    background-color: rgb(88, 88, 88);
+.entry:hover,
+.entry:active {
+  background-color: rgb(88, 88, 88);
 }
 
-.entry:hover .excerpt, .entry:active .excerpt{
-    display: block;
-    opacity: 1;
+.entry:hover .excerpt,
+.entry:active .excerpt {
+  display: block;
+  opacity: 1;
 }
 
 .excerpt {
-    display: none;
-    transition: opacity 1s ease-in-out;
-    opacity: 0%;
-    transition: max-height 1s linear;
+  display: none;
+  transition: opacity 1s ease-in-out;
+  opacity: 0%;
+  transition: max-height 1s linear;
 }
 
 .excerptContent {
-    font-family: Anonymice Nerd;
-    font-size: 16pt;
+  font-family: Anonymice Nerd;
+  font-size: 16pt;
 }

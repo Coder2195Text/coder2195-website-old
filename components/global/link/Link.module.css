@@ -1,38 +1,38 @@
 .link {
-    margin-bottom: 20px;
-    font-family: Aqua;
-    display: inline-block;
-    --padding-x: 30px;
-    --padding-y: 20px;
-    --font-size: 20pt;
-    border-radius: 20px;
-    position: relative;
-    font-size: var(--font-size);
-    padding: var(--padding-y) var(--padding-x);
-    transition: all .5s ease-out;
-    border: none;
-    background-color: gray;
+  margin-bottom: 20px;
+  font-family: Aqua;
+  display: inline-block;
+  --padding-x: 30px;
+  --padding-y: 20px;
+  --font-size: 20pt;
+  border-radius: 20px;
+  position: relative;
+  font-size: var(--font-size);
+  padding: var(--padding-y) var(--padding-x);
+  transition: all 0.5s ease-out;
+  border: none;
+  background-color: gray;
 }
 
 .link::before {
-    content: "";
-    width: calc(100% - 2 * var(--padding-x));
-    transform: scaleX(0);
+  content: "";
+  width: calc(100% - 2 * var(--padding-x));
+  transform: scaleX(0);
 
-    height: 5px;
-    position: absolute;
-    top: calc(var(--padding-y) + var(--font-size) + 5px);
+  height: 5px;
+  position: absolute;
+  top: calc(var(--padding-y) + var(--font-size) + 5px);
 
-    background-color: white;
-    transform-origin: bottom left;
-    transition: transform 0.25s ease-out;
+  background-color: white;
+  transform-origin: bottom left;
+  transition: transform 0.25s ease-out;
 }
 
 .link:hover:before {
-    transform: scaleX(1);
-    transform-origin: bottom left;
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 .link:hover {
-    background-color: transparent;
+  background-color: transparent;
 }

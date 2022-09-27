@@ -1,18 +1,18 @@
 .wrapper {
-    font-family: Anonymice Nerd;
-    font-size: 18pt;
-    max-width: 90vw;
-    margin-left: 5vw;
-    margin-right: 5vw;
-    margin-bottom: 72pt;
+  font-family: Anonymice Nerd;
+  font-size: 18pt;
+  max-width: 90vw;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  margin-bottom: 72pt;
 }
 
 .wrapper a {
-    color: skyblue;
-    text-decoration: underline;
-    transition: all .25s linear;
+  color: skyblue;
+  text-decoration: underline;
+  transition: all 0.25s linear;
 }
 
 .wrapper a:hover {
-    color: blue;
+  color: blue;
 }

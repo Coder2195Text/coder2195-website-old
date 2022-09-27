@@ -1,22 +1,22 @@
 export interface IAsset {
-    id: string;
-    url: string;
-    width: number;
-    height: number;
+  id: string;
+  url: string;
+  width: number;
+  height: number;
 }
 
 export interface IRichText {
-    markdown: string;
+  markdown: string;
 }
 
 export interface IPost {
-    id: string;
-    title: string;
-    date: string;
-    excerpt: string | null;
-    coverImage: IAsset | null;
-    content: IRichText
-    slug: string;
-    previous: IPost | null;
-    next: IPost | null
+  id: string;
+  title: string;
+  date: string;
+  excerpt: string | null;
+  coverImage: IAsset | null;
+  content: IRichText;
+  slug: string;
+  previous: IPost | null;
+  next: IPost | null;
 }
