@@ -8,6 +8,7 @@ import BlogContent from "../../components/blog/blogContent/BlogContent";
 import Head from "next/head";
 import Footer from "../../components/global/footer/Footer";
 import { BlogFooterButton, FooterHome } from "../../components/global/footer/FooterButton";
+import Image from "next/image";
 
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
@@ -43,7 +44,7 @@ const BlogPostPage: FC<Props> = ({post}) => {
             <title>{`Blog: ${post.title}`}</title>
         </Head>
         <Title>{post.title}</Title>
-        <CoverImage image={post.coverImage}/>
+        {post.coverImage ? <Image alt="" width={post.coverImage.width} height={post.coverImage.height} src={post.coverImage.url}/> : <></>}
         <BlogContent content={post.content.markdown}/>
         <Footer>
             <BlogFooterButton post={post.next}></BlogFooterButton>
