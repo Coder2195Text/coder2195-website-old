@@ -1,10 +1,9 @@
 import Head from "next/head";
 import Title from "../components/global/title/Title";
-import { FC, useContext } from "react";
 import Link from "../components/global/link/Link";
+import { NextPage } from "next";
 
-const Home: FC = () => {
-  //to do add translations
+const Home: NextPage = () => {
   return (
     <div>
       <Head>

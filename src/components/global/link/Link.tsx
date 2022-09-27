@@ -1,9 +1,8 @@
 import NextLink from "next/link";
-import { FC } from "react";
+import { FC, PropsWithChildren } from "react";
 import styles from "./Link.module.css";
 
-interface Props {
-  children: string;
+interface Props extends PropsWithChildren {
   href: string;
 }
 

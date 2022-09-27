@@ -1,0 +1,45 @@
+.wrapper {
+  font-family: Anonymice Nerd;
+  font-size: 18pt;
+  max-width: 90vw;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  margin-bottom: 72pt;
+}
+
+.wrapper a {
+  color: skyblue;
+  text-decoration: underline;
+  transition: all 0.25s linear;
+}
+
+.wrapper a:hover {
+  color: blue;
+}
+
+.footer {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 2.5vw;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+.footer button {
+  font-family: Anonymice Nerd;
+  border: none;
+  font-size: 30pt;
+  height: 42pt;
+  width: 42pt;
+  border-radius: 42pt;
+  background-color: gray;
+  transition: all 0.5s;
+}
+
+.footer button:hover:enabled {
+  cursor: pointer;
+  background-color: rgb(185, 185, 185);
+}
