@@ -31,3 +31,9 @@ a {
 html {
   color-scheme: dark;
 }
+
+#title {
+  text-align: center;
+  font-family: Manrope;
+  font-size: 40pt;
+}

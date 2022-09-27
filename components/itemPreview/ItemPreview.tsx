@@ -1,5 +1,4 @@
 import { FC } from "react"
-import { IBlogPost } from "../../../graphql/types"
 import styles from "./ItemPreview.module.css"
 import NextLink from "next/link"
 

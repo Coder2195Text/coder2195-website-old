@@ -1,9 +1,7 @@
 import { GetStaticProps } from "next";
 import { FC } from "react";
-import Title from "../../components/title/Title";
 import { fetchBlogSlugs, fetchBlogPost } from "../../graphql/queries";
 import { IBlogPost } from "../../graphql/types";
-import BlogContent from "../../components/MDContent/MDContent";
 import Footer from "../../components/footer/Footer";
 import IconButton from "../../components/iconButton/IconButton";
 import Image from "next/image";
@@ -50,9 +48,11 @@ const BlogPostPage: FC<Props> = ({post}) => {
 					description
 				}}
 			/>
-        <Title>{post.title}</Title>
+        <h1 id="title">{post.title}</h1>
         {post.coverImage ? <Image alt="" width={post.coverImage.width} height={post.coverImage.height} src={post.coverImage.url}/> : <></>}
-        <MDContent content={post.content.markdown}/>
+        <div style={{marginLeft: "5vw", marginRight: "5vw"}}>
+            <MDContent content={post.content.markdown}/>
+        </div>
         <Footer>
             <IconButton disabled={!post.next} href={`/posts/${post?.next}`}></IconButton>
             <IconButton href="/blog"></IconButton>

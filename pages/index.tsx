@@ -1,6 +1,4 @@
-import Head from 'next/head'
-import Title from '../components/title/Title'
-import { FC, useContext } from 'react'
+import { FC } from 'react'
 import Link from '../components/link/Link'
 import { NextSeo } from 'next-seo'
 
@@ -18,7 +16,7 @@ const Home: FC = () => {
 					description
 				}}
 			/>
-			<Title>Coder2195's Website</Title>
+			<h1 id='title'>Coder2195's Website</h1>
 			<Link href='/blog'>Blog</Link>
 			<br/>
 			<Link href='https://scam.com'>Scam</Link>

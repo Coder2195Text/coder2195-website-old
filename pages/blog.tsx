@@ -3,7 +3,6 @@ import { NextSeo } from 'next-seo';
 import { FC } from 'react';
 import ItemPreview from '../components/itemPreview/ItemPreview';
 import Link from '../components/link/Link';
-import Title from '../components/title/Title';
 import { fetchBlogPreviews } from '../graphql/queries';
 import { IBlogPost } from '../graphql/types';
 
@@ -35,7 +34,7 @@ const Blog: FC<Props> = ({posts}) => {
 					description
 				}}
 			/>
-        <Title>Blog Posts</Title>
+        <h1 id='title'>Blog Posts</h1>
         {posts.map((p)=>{return <ItemPreview key={p.slug} href={`/blog/${p.slug}`} title={p.title} excerpt={p.excerpt}/>})}
         <Link href="/">Return Home</Link>
     </div>
