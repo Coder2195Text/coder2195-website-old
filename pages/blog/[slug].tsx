@@ -4,10 +4,10 @@ import Title from "../../components/global/title/Title";
 import { fetchBlogSlugs, fetchBlogPost } from "../../graphql/queries";
 import { IPost } from "../../graphql/types";
 import BlogContent from "../../components/blog/blogContent/BlogContent";
-import Head from "next/head";
 import Footer from "../../components/global/footer/Footer";
 import IconButton from "../../components/global/iconButton/IconButton";
 import Image from "next/image";
+import { NextSeo } from "next-seo";
 
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
@@ -38,12 +38,17 @@ interface Props {
 }
 
 const BlogPostPage: FC<Props> = ({post}) => {
+    const title = `Coder2195 - Blog: ${post.title}`
+    const description = post.excerpt ? post.excerpt : ""
     return <>
-        <Head>
-            <title>{`Blog: ${post.title}`}</title>
-            <meta property="og:title" content={`Coder2195 - Blog: ${post.title}`} />
-            <meta property="og:description" content={post.excerpt ? post.excerpt : `Check out the blog "${post.title}" from Coder2195!`} />
-        </Head>
+        <NextSeo 
+				title={title} 
+				description={description}
+				openGraph={{
+					title,
+					description
+				}}
+			/>
         <Title>{post.title}</Title>
         {post.coverImage ? <Image alt="" width={post.coverImage.width} height={post.coverImage.height} src={post.coverImage.url}/> : <></>}
         <BlogContent content={post.content.markdown}/>
