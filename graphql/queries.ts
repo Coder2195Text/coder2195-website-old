@@ -9,7 +9,7 @@ const hygraph = new GraphQLClient(
 export async function fetchBlogPreviews() {
     const { posts } = await hygraph.request<{ posts: IPost[] }>(`
         query {
-            posts {
+            posts(orderBy: createdAt_DESC) {
                 slug
                 excerpt
                 title
@@ -24,11 +24,21 @@ export async function fetchBlogPost(slug: string) {
         query ($slug: String!){
             post(where: { slug: $slug }) {
                 title
-                coverImage
+                coverImage {
+                    url
+                    width
+                    height
+                }
                 content {
                     markdown
                 }
                 date
+                next {
+                    slug
+                }
+                previous {
+                    slug
+                }
             }
         }
     `, { slug })

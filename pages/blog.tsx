@@ -1,5 +1,6 @@
 import { GraphQLClient } from 'graphql-request';
 import { GetStaticProps } from 'next';
+import Head from 'next/head';
 import { FC } from 'react';
 import BlogPreview from '../components/blog/blogPreview/BlogPreview';
 import Title from '../components/global/title/Title';
@@ -23,8 +24,10 @@ export const getStaticProps: GetStaticProps = async() =>{
 }
 
 const Blog: FC<Props> = ({posts}) => {
-    console.log(posts)
     return <div>
+        <Head>
+            <title>Coder2195 - Blog</title>
+        </Head>
         <Title>Blog Posts</Title>
         <BlogPreview posts={posts}/>
     </div>

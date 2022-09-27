@@ -1,10 +1,12 @@
 export interface IAsset {
     id: string;
-    url: string
+    url: string;
+    width: number;
+    height: number;
 }
 
 export interface IRichText {
-    markdown: String;
+    markdown: string;
 }
 
 export interface IPost {
@@ -15,4 +17,6 @@ export interface IPost {
     coverImage: IAsset | null;
     content: IRichText
     slug: string;
+    previous: IPost | null;
+    next: IPost | null
 }
