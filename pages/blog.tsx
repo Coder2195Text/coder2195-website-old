@@ -1,9 +1,9 @@
 import { GetStaticProps } from 'next';
 import { NextSeo } from 'next-seo';
 import { FC } from 'react';
-import BlogPreview from '../components/blog/blogPreview/BlogPreview';
-import Link from '../components/global/link/Link';
-import Title from '../components/global/title/Title';
+import ItemPreview from '../components/itemPreview/ItemPreview';
+import Link from '../components/link/Link';
+import Title from '../components/title/Title';
 import { fetchBlogPreviews } from '../graphql/queries';
 import { IBlogPost } from '../graphql/types';
 
@@ -36,7 +36,7 @@ const Blog: FC<Props> = ({posts}) => {
 				}}
 			/>
         <Title>Blog Posts</Title>
-        <BlogPreview posts={posts}/>
+        {posts.map((p)=>{return <ItemPreview key={p.slug} href={`/blog/${p.slug}`} title={p.title} excerpt={p.excerpt}/>})}
         <Link href="/">Return Home</Link>
     </div>
 }

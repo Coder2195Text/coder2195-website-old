@@ -1,7 +1,7 @@
 import Head from 'next/head'
-import Title from '../components/global/title/Title'
+import Title from '../components/title/Title'
 import { FC, useContext } from 'react'
-import Link from '../components/global/link/Link'
+import Link from '../components/link/Link'
 import { NextSeo } from 'next-seo'
 
 const Home: FC = () => {

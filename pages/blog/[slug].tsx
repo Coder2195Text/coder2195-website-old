@@ -1,13 +1,14 @@
 import { GetStaticProps } from "next";
 import { FC } from "react";
-import Title from "../../components/global/title/Title";
+import Title from "../../components/title/Title";
 import { fetchBlogSlugs, fetchBlogPost } from "../../graphql/queries";
-import { IPost } from "../../graphql/types";
-import BlogContent from "../../components/blog/blogContent/BlogContent";
-import Footer from "../../components/global/footer/Footer";
-import IconButton from "../../components/global/iconButton/IconButton";
+import { IBlogPost } from "../../graphql/types";
+import BlogContent from "../../components/MDContent/MDContent";
+import Footer from "../../components/footer/Footer";
+import IconButton from "../../components/iconButton/IconButton";
 import Image from "next/image";
 import { NextSeo } from "next-seo";
+import MDContent from "../../components/MDContent/MDContent";
 
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
@@ -34,7 +35,7 @@ export async function getStaticPaths() {
 }
 
 interface Props {
-    post: IPost
+    post: IBlogPost
 }
 
 const BlogPostPage: FC<Props> = ({post}) => {
@@ -51,7 +52,7 @@ const BlogPostPage: FC<Props> = ({post}) => {
 			/>
         <Title>{post.title}</Title>
         {post.coverImage ? <Image alt="" width={post.coverImage.width} height={post.coverImage.height} src={post.coverImage.url}/> : <></>}
-        <BlogContent content={post.content.markdown}/>
+        <MDContent content={post.content.markdown}/>
         <Footer>
             <IconButton disabled={!post.next} href={`/posts/${post?.next}`}></IconButton>
             <IconButton href="/blog"></IconButton>
