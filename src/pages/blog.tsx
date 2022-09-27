@@ -1,9 +1,8 @@
 import { InferGetStaticPropsType, NextPage } from "next";
+import { BlogPreview } from "@/components/blog-preview";
+import { Link, Title } from "@/components/shared";
+import { fetchBlogPreviews } from "@/graphql/queries";
 import Head from "next/head";
-import { BlogPreview } from "../components/blog-preview";
-import Link from "../components/global/link/Link";
-import Title from "../components/global/title/Title";
-import { fetchBlogPreviews } from "../graphql/queries";
 
 const Blog: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   posts,

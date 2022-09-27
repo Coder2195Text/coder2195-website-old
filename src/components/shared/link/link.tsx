@@ -1,6 +1,6 @@
 import NextLink from "next/link";
 import { FC, PropsWithChildren } from "react";
-import styles from "./Link.module.css";
+import styles from "./link.module.css";
 
 const Link: FC<PropsWithChildren<{ href: string }>> = ({ href, children }) => {
   return (

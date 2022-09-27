@@ -1,4 +1,4 @@
-import { IPost } from "../../graphql/types";
+import { IPost } from "@/graphql/types";
 import styles from "./blog-preview.module.css";
 import NextLink from "next/link";
 

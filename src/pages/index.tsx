@@ -1,6 +1,5 @@
 import Head from "next/head";
-import Title from "../components/global/title/Title";
-import Link from "../components/global/link/Link";
+import { Title, Link } from "@/components/shared";
 import { NextPage } from "next";
 
 const Home: NextPage = () => {

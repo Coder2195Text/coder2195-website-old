@@ -4,9 +4,9 @@ import {
   InferGetStaticPropsType,
   NextPage,
 } from "next";
-import { fetchBlogSlugs, fetchBlogPost } from "../../graphql/queries";
+import { fetchBlogSlugs, fetchBlogPost } from "@/graphql/queries";
 import Head from "next/head";
-import { Blog } from "../../components/blog";
+import { Blog } from "@/components/blog";
 
 const BlogPostPage: NextPage<
   InferGetStaticPropsType<typeof getStaticProps>

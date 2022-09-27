@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { FC, PropsWithChildren } from "react";
-import { IPost } from "../../graphql/types";
+import { IPost } from "@/graphql/types";
 
 export const BlogFooterButton: FC<
   PropsWithChildren<{ post: IPost | null }>

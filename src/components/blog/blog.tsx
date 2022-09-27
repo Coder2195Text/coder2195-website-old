@@ -1,11 +1,11 @@
-import styles from "./blog.module.css";
 import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
-import { IPost } from "../../graphql/types";
 import Image from "next/image";
 import Link from "next/link";
-import { BlogFooterButton } from "./footer-button";
+import remarkGfm from "remark-gfm";
 import { FiChevronLeft, FiChevronRight, FiHome } from "react-icons/fi";
+import styles from "./blog.module.css";
+import { IPost } from "@/graphql/types";
+import { BlogFooterButton } from "./footer-button";
 
 export const Blog: React.FC<{ post: IPost }> = ({ post }) => {
   return (
@@ -27,17 +27,17 @@ export const Blog: React.FC<{ post: IPost }> = ({ post }) => {
 
       <div className={styles.footer}>
         <BlogFooterButton post={post.previous}>
-          <FiChevronLeft />
+          <FiChevronLeft color="white" />
         </BlogFooterButton>
 
         <Link href="/">
           <button className="button">
-            <FiHome />
+            <FiHome color="white" />
           </button>
         </Link>
 
         <BlogFooterButton post={post.previous}>
-          <FiChevronRight />
+          <FiChevronRight color="white" />
         </BlogFooterButton>
       </div>
     </div>
