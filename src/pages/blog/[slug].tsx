@@ -1,19 +1,20 @@
-import { GetStaticProps } from "next";
-import { FC } from "react";
+import {
+  GetStaticPaths,
+  GetStaticPropsContext,
+  InferGetStaticPropsType,
+  NextPage,
+} from "next";
 import { fetchBlogSlugs, fetchBlogPost } from "../../graphql/queries";
-import { IPost } from "../../graphql/types";
 import Head from "next/head";
 import { Blog } from "../../components/blog";
 
-interface Props {
-  post: IPost;
-}
-
-const BlogPostPage: FC<Props> = ({ post }) => {
+const BlogPostPage: NextPage<
+  InferGetStaticPropsType<typeof getStaticProps>
+> = ({ post }) => {
   return (
     <>
       <Head>
-        <title>Blog: {post.title}</title>
+        <title>Blog: {post.title}</title>{" "}
       </Head>
 
       <Blog post={post} />
@@ -21,7 +22,7 @@ const BlogPostPage: FC<Props> = ({ post }) => {
   );
 };
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
   const post = await fetchBlogPost(params!.slug as string);
 
   return {
@@ -31,7 +32,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   };
 };
 
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = async () => {
   const slugs = await fetchBlogSlugs();
 
   return {
@@ -40,6 +41,6 @@ export async function getStaticPaths() {
     })),
     fallback: "blocking",
   };
-}
+};
 
 export default BlogPostPage;

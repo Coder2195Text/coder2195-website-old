@@ -1,11 +1,7 @@
-import { FC, useContext } from "react";
+import { FC, PropsWithChildren } from "react";
 import styles from "./Title.module.css";
 
-interface Props {
-  children: string;
-}
-
-const Title: FC<Props> = ({ children }) => {
+const Title: FC<PropsWithChildren<{}>> = ({ children }) => {
   return <h1 className={styles.title}>{children}</h1>;
 };
 
