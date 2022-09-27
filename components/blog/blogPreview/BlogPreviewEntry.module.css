@@ -2,14 +2,15 @@
     width: 90vw;
     margin-bottom: 20px;
     border-radius: 20px;
-    background-color: gray;
+    background-color: darkslategray;
     display: inline-block;
     transition: background-color .5s linear;
 }
 
 .title {
     font-family: Aqua;
-    font-size: 20pt;
+    font-size: 24pt;
+    font-weight: bold;
 }
 
 .entry:hover, .entry:active {
