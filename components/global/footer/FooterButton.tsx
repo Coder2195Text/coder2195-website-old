@@ -1,14 +1,16 @@
 import Link from "next/link";
 import { FC } from "react";
 import { IPost } from "../../../graphql/types";
-import styles from "./BlogFooterButton.module.css"
+import styles from "./FooterButton.module.css"
 
-interface ButtonProps extends HomeProps{
+interface ButtonProps {
     post: IPost | null
+    children: string
 }
 
 interface HomeProps {
-    children: string
+    children: string,
+    url: string
 }
 
 const BlogFooterButton: FC<ButtonProps> = ({post, children}) => {
@@ -18,8 +20,8 @@ const BlogFooterButton: FC<ButtonProps> = ({post, children}) => {
     return <Link href={`/blog/${post.slug}`}>{button}</Link>
 }
 
-const BlogFooterHome: FC<HomeProps> = ({children}) => {
-    return <Link href={`/blog`}><button className={styles.button}>{children}</button></Link>
+const FooterHome: FC<HomeProps> = ({children, url}) => {
+    return <Link href={url}><button className={styles.button}>{children}</button></Link>
 }
 
-export { BlogFooterButton, BlogFooterHome };
+export { BlogFooterButton, FooterHome };

@@ -6,7 +6,8 @@ import { fetchBlogSlugs, fetchBlogPost } from "../../graphql/queries";
 import { IPost } from "../../graphql/types";
 import BlogContent from "../../components/blog/blogContent/BlogContent";
 import Head from "next/head";
-import BlogFooter from "../../components/blog/blogFooter/BlogFooter";
+import Footer from "../../components/global/footer/Footer";
+import { BlogFooterButton, FooterHome } from "../../components/global/footer/FooterButton";
 
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
@@ -44,7 +45,11 @@ const BlogPostPage: FC<Props> = ({post}) => {
         <Title>{post.title}</Title>
         <CoverImage image={post.coverImage}/>
         <BlogContent content={post.content.markdown}/>
-        <BlogFooter post={post}/>
+        <Footer>
+            <BlogFooterButton post={post.next}></BlogFooterButton>
+            <FooterHome url="/blog"></FooterHome>
+            <BlogFooterButton post={post.previous}></BlogFooterButton>
+        </Footer>
     </>
 };
 
