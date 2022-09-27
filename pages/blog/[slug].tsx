@@ -6,7 +6,7 @@ import { IPost } from "../../graphql/types";
 import BlogContent from "../../components/blog/blogContent/BlogContent";
 import Head from "next/head";
 import Footer from "../../components/global/footer/Footer";
-import { BlogFooterButton, FooterHome } from "../../components/global/footer/FooterButton";
+import IconButton from "../../components/global/iconButton/IconButton";
 import Image from "next/image";
 
 
@@ -46,9 +46,9 @@ const BlogPostPage: FC<Props> = ({post}) => {
         {post.coverImage ? <Image alt="" width={post.coverImage.width} height={post.coverImage.height} src={post.coverImage.url}/> : <></>}
         <BlogContent content={post.content.markdown}/>
         <Footer>
-            <BlogFooterButton post={post.next}></BlogFooterButton>
-            <FooterHome url="/blog"></FooterHome>
-            <BlogFooterButton post={post.previous}></BlogFooterButton>
+            <IconButton disabled={!post.next} href={`/posts/${post?.next}`}></IconButton>
+            <IconButton href="/blog"></IconButton>
+            <IconButton disabled={!post.previous} href={`/posts/${post?.previous}`}></IconButton>
         </Footer>
     </>
 };
