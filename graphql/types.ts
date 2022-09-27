@@ -9,7 +9,7 @@ export interface IRichText {
     markdown: string;
 }
 
-export interface IPost {
+export interface IBlogPost {
     id: string;
     title: string;
     date: string;
@@ -17,6 +17,6 @@ export interface IPost {
     coverImage: IAsset | null;
     content: IRichText
     slug: string;
-    previous: IPost | null;
-    next: IPost | null
+    previous: IBlogPost | null;
+    next: IBlogPost | null
 }

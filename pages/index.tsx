@@ -18,6 +18,7 @@ const Home: FC = () => {
 					description
 				}}
 			/>
+			<Title>Coder2195's Website</Title>
 			<Link href='/blog'>Blog</Link>
 			<br/>
 			<Link href='https://scam.com'>Scam</Link>

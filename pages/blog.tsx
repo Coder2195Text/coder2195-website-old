@@ -5,11 +5,11 @@ import BlogPreview from '../components/blog/blogPreview/BlogPreview';
 import Link from '../components/global/link/Link';
 import Title from '../components/global/title/Title';
 import { fetchBlogPreviews } from '../graphql/queries';
-import { IPost } from '../graphql/types';
+import { IBlogPost } from '../graphql/types';
 
 
 interface Props {
-    posts: Array<IPost>
+    posts: Array<IBlogPost>
 }
 
 export const getStaticProps: GetStaticProps = async() =>{

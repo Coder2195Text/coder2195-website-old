@@ -1,5 +1,5 @@
 import { gql, GraphQLClient } from "graphql-request";
-import { IPost } from "./types";
+import { IBlogPost } from "./types";
 
 const hygraph = new GraphQLClient(
     'https://api-us-east-1.hygraph.com/v2/cl8hzzoiu59rq01tccufrg18c/master'
@@ -7,22 +7,22 @@ const hygraph = new GraphQLClient(
 
 
 export async function fetchBlogPreviews() {
-    const { posts } = await hygraph.request<{ posts: IPost[] }>(`
+    const { blogPosts } = await hygraph.request<{ blogPosts: IBlogPost[] }>(`
         query {
-            posts(orderBy: createdAt_DESC) {
+            blogPosts(orderBy: createdAt_DESC) {
                 slug
                 excerpt
                 title
             }
         }
     `)
-    return posts;
+    return blogPosts;
 }
 
 export async function fetchBlogPost(slug: string) {
-    const { post } = await hygraph.request<{ post: IPost }>(`
+    const { blogPost } = await hygraph.request<{ blogPost: IBlogPost }>(`
         query ($slug: String!){
-            post(where: { slug: $slug }) {
+            blogPost(where: { slug: $slug }) {
                 title
                 excerpt
                 coverImage {
@@ -43,16 +43,16 @@ export async function fetchBlogPost(slug: string) {
             }
         }
     `, { slug })
-    return post;
+    return blogPost;
 }
 
 export async function fetchBlogSlugs() {
-    const { posts } = await hygraph.request<{ posts: IPost[] }>(`
+    const { blogPosts } = await hygraph.request<{ blogPosts: IBlogPost[] }>(`
         query {
-            posts {
+            blogPosts {
                 slug
             }
         }
     `)
-    return posts.map((post: IPost) => { return post.slug })
+    return blogPosts.map((post: IBlogPost) => { return post.slug })
 }
