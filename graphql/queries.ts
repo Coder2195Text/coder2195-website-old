@@ -61,7 +61,9 @@ export async function fetchSocials(){
     const {socials} = await hygraph.request<{socials: ISocial[]}>(`
         query {
             socials {
-                icon
+                icon {
+                    url
+                }
                 url
                 target
             }

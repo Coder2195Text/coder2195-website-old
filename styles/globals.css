@@ -4,8 +4,8 @@
 }
 
 @font-face {
-  font-family: Anonymice Nerd;
-  src: url("/fonts/anonymice-nerd.ttf");
+  font-family: Inconsolata;
+  src: url("/fonts/inconsolata.ttf");
 }
 
 @font-face {

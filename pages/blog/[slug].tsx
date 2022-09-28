@@ -7,58 +7,80 @@ import IconButton from "../../components/iconButton/IconButton";
 import Image from "next/image";
 import { NextSeo } from "next-seo";
 import MDContent from "../../components/MDContent/MDContent";
-
+import icons from "../../utils/icons";
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-    const slug = params!.slug;
-    if (typeof slug != "string") return { props: {} };
-    const post = await fetchBlogPost(slug);
+	const slug = params!.slug;
+	if (typeof slug != "string") return { props: {} };
+	const post = await fetchBlogPost(slug);
 
-    return {
-        props: {
-            post,
-        },
-    };
-}
+	return {
+		props: {
+			post,
+		},
+	};
+};
 
 export async function getStaticPaths() {
-    const slugs = await fetchBlogSlugs();
+	const slugs = await fetchBlogSlugs();
 
-    return {
-        paths: slugs.map((slug) => ({
-            params: { slug },
-        })),
-        fallback: "blocking",
-    };
+	return {
+		paths: slugs.map((slug) => ({
+			params: { slug },
+		})),
+		fallback: "blocking",
+	};
 }
 
 interface Props {
-    post: IBlogPost
+	post: IBlogPost;
 }
 
-const BlogPostPage: FC<Props> = ({post}) => {
-    const title = `Coder2195 - Blog: ${post.title}`
-    const description = post.excerpt ? post.excerpt : ""
-    return <>
-        <NextSeo 
-				title={title} 
+const BlogPostPage: FC<Props> = ({ post }) => {
+	const title = `Coder2195 - Blog: ${post.title}`;
+	const description = post.excerpt ? post.excerpt : "";
+	return (
+		<>
+			<NextSeo
+				title={title}
 				description={description}
 				openGraph={{
 					title,
-					description
+					description,
 				}}
 			/>
-        <h1 id="title">{post.title}</h1>
-        {post.coverImage ? <Image alt="" width={post.coverImage.width} height={post.coverImage.height} src={post.coverImage.url}/> : <></>}
-        <div style={{marginLeft: "5vw", marginRight: "5vw"}}>
-            <MDContent content={post.content.markdown}/>
-        </div>
-        <Footer>
-            <IconButton disabled={!post.next} href={`/posts/${post?.next}`}></IconButton>
-            <IconButton href="/blog"></IconButton>
-            <IconButton disabled={!post.previous} href={`/posts/${post?.previous}`}></IconButton>
-        </Footer>
-    </>
+			<h1 id="title">{post.title}</h1>
+			{post.coverImage ? (
+				<Image
+					alt=""
+					width={post.coverImage.width}
+					height={post.coverImage.height}
+					src={post.coverImage.url}
+				/>
+			) : (
+				<></>
+			)}
+			<div style={{ marginLeft: "5vw", marginRight: "5vw" }}>
+				<MDContent
+					content={post.content.markdown}
+					style={{ marginBottom: "72pt" }}
+				/>
+			</div>
+			<Footer>
+				<IconButton
+					disabled={!post.next}
+					href={`/posts/${post?.next}`}
+					src={icons.LEFT_BUTTON}
+				/>
+				<IconButton href="/blog" src={icons.HOME} />
+				<IconButton
+					disabled={!post.previous}
+					href={`/posts/${post?.previous}`}
+					src={icons.RIGHT_BUTTON}
+				/>
+			</Footer>
+		</>
+	);
 };
 
 export default BlogPostPage;

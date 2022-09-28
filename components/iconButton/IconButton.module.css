@@ -1,14 +1,16 @@
 .button {
-    font-family: Anonymice Nerd;
-    border: none;
-    margin: 0 2.5vw;
-    border-radius: 42pt;
-    background-color: gray;
-    transition: all .5s;
+	font-family: Anonymice Nerd;
+	border: none;
+	margin: 0 2.5vw;
+	border-radius: 42pt;
+	background-color: gray;
+	transition: all 0.5s;
+	background-size: 70.7106781% 70.7106781%;
+	background-position: center;
+	background-repeat: no-repeat;
 }
 
 .button:hover:enabled {
-    cursor: pointer;
-    background-color: rgb(185, 185, 185);
+	cursor: pointer;
+	background-color: rgb(185, 185, 185);
 }
-

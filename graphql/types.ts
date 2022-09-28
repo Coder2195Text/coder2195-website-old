@@ -37,7 +37,7 @@ export interface IProject {
 }
 
 export interface ISocial {
-    icon: string;
+    icon: IAsset;
     url: string;
     target: string;
 }
