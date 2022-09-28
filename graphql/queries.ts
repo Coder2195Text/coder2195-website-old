@@ -1,5 +1,5 @@
 import { gql, GraphQLClient } from "graphql-request";
-import { IBlogPost } from "./types";
+import { IBlogPost, ISocial } from "./types";
 
 const hygraph = new GraphQLClient(
     'https://api-us-east-1.hygraph.com/v2/cl8hzzoiu59rq01tccufrg18c/master'
@@ -55,4 +55,17 @@ export async function fetchBlogSlugs() {
         }
     `)
     return blogPosts.map((post: IBlogPost) => { return post.slug })
+}
+
+export async function fetchSocials(){
+    const {socials} = await hygraph.request<{socials: ISocial[]}>(`
+        query {
+            socials {
+                icon
+                url
+                target
+            }
+        }
+    `)
+    return socials
 }

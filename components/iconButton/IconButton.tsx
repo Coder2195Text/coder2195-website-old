@@ -6,13 +6,20 @@ interface Props {
     disabled?: boolean,
     children: string;
     href: string;
+    target?: string;
+    size?: string;
 }
 
 
-const IconButton: FC<Props> = ({disabled, href, children}) => {
-    const button = <button className={styles.button} disabled={disabled}>{children}</button>
+const IconButton: FC<Props> = ({disabled, href, children, target, size}) => {
+    if (!size) size = "42pt";
+    const button = <button style={{
+        fontSize: size,
+        height: size,
+        width: size
+    }} className={styles.button} disabled={disabled}>{children}</button>
     if (disabled) return button;
-    return <Link href={href}>{button}</Link>
+    return <Link href={href}><a target={target}>{button}</a></Link>
 }
 
 

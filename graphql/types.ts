@@ -20,3 +20,24 @@ export interface IBlogPost {
     previous: IBlogPost | null;
     next: IBlogPost | null
 }
+
+export interface IChangeLogEntry {
+    version: string;
+    project: IProject;
+    description: IRichText;
+}
+
+export interface IProject {
+    changeLog: IChangeLogEntry[];
+    slug: string;
+    title: string;
+    embed: string;
+    description: IRichText;
+    excerpt: string | null;
+}
+
+export interface ISocial {
+    icon: string;
+    url: string;
+    target: string;
+}
