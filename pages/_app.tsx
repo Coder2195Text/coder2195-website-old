@@ -6,14 +6,13 @@ import { useEffect, useState } from 'react'
 function MyApp({ Component, pageProps }: AppProps) {
   const [ready, setReady] = useState(false)
   useEffect(() => {
-    async function load() {
-      for (const font of document.fonts.values()) {
-        await font.load()
-      }
+    const promises: Promise<any>[] = [];
+    for (const font of document.fonts.values()) {
+      promises.push(font.load())
     }
-    load().then(()=>{
+    Promise.all(promises).then(() => {
       setReady(true)
-    });
+    })
   }, [])
   if (!ready) return <></>
   return <>

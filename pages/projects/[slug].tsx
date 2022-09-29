@@ -62,7 +62,7 @@ const ProjectPage: FC<Props> = ({ project }) => {
 				/>
 			</div>
 			<Footer>
-				<IconButton href="/blog" src={icons.HOME} />
+				<IconButton href="/projects" src={icons.HOME} />
 			</Footer>
 		</>
 	);

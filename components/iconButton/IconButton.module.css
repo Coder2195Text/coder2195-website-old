@@ -14,3 +14,8 @@
 	cursor: pointer;
 	background-color: rgb(185, 185, 185);
 }
+
+.button:disabled {
+	visibility: hidden;
+	height: 0;
+}

@@ -69,13 +69,13 @@ const BlogPostPage: FC<Props> = ({ post }) => {
 			<Footer>
 				<IconButton
 					disabled={!post.next}
-					href={`/posts/${post?.next}`}
+					href={`/blog/${post?.next?.slug}`}
 					src={icons.LEFT_BUTTON}
 				/>
 				<IconButton href="/blog" src={icons.HOME} />
 				<IconButton
 					disabled={!post.previous}
-					href={`/posts/${post?.previous}`}
+					href={`/blog/${post?.previous?.slug}`}
 					src={icons.RIGHT_BUTTON}
 				/>
 			</Footer>
