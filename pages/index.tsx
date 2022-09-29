@@ -17,6 +17,8 @@ const Home: FC = () => {
 				}}
 			/>
 			<h1 id='title'>Coder2195's Website</h1>
+			<Link href='/projects'>Projects</Link>
+			<br/>
 			<Link href='/blog'>Blog</Link>
 			<br/>
 			<Link href='/socials'>Socials</Link>

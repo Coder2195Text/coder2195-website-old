@@ -1,5 +1,5 @@
 import { gql, GraphQLClient } from "graphql-request";
-import { IBlogPost, ISocial } from "./types";
+import { IBlogPost, IProject, ISocial } from "./types";
 
 const hygraph = new GraphQLClient(
     'https://api-us-east-1.hygraph.com/v2/cl8hzzoiu59rq01tccufrg18c/master'
@@ -70,4 +70,50 @@ export async function fetchSocials(){
         }
     `)
     return socials
+}
+
+export async function fetchProjectPreviews() {
+    const { projects } = await hygraph.request<{ projects: IProject[] }>(`
+        query {
+            projects(orderBy: createdAt_DESC) {
+                slug
+                excerpt
+                title
+            }
+        }
+    `)
+    return projects;
+}
+
+export async function fetchProject(slug: string) {
+    const { project } = await hygraph.request<{ project: IProject }>(`
+        query ($slug: String!){
+            project(where: { slug: $slug }) {
+                title
+                excerpt
+                embed
+                changeLogEntries {
+                    version
+                    description {
+                        markdown
+                    }
+                }
+                description {
+                    markdown
+                }
+            }
+        }
+    `, { slug })
+    return project;
+}
+
+export async function fetchProjectSlugs() {
+    const { projects } = await hygraph.request<{ projects: IProject[] }>(`
+        query {
+            projects {
+                slug
+            }
+        }
+    `)
+    return projects.map((post: IProject) => { return post.slug })
 }

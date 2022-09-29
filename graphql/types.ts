@@ -28,7 +28,7 @@ export interface IChangeLogEntry {
 }
 
 export interface IProject {
-    changeLog: IChangeLogEntry[];
+    changeLogEntries: IChangeLogEntry[];
     slug: string;
     title: string;
     embed: string;

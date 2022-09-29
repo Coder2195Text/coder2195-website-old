@@ -2,7 +2,7 @@ import { FC } from "react";
 import styles from "./Footer.module.css"
 
 interface Props {
-    children: JSX.Element[]
+    children: JSX.Element[] | JSX.Element
 }
 
 const Footer: FC<Props> = ({children}) => {
