@@ -4,7 +4,6 @@ import { fetchProjectSlugs, fetchProject } from "../../graphql/queries";
 import { IProject } from "../../graphql/types";
 import Footer from "../../components/footer/Footer";
 import IconButton from "../../components/iconButton/IconButton";
-import Image from "next/image";
 import { NextSeo } from "next-seo";
 import MDContent from "../../components/MDContent/MDContent";
 import icons from "../../utils/icons";

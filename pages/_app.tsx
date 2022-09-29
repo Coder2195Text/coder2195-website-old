@@ -1,10 +1,21 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
-import { useRouter } from 'next/router'
 import { DefaultSeo } from 'next-seo'
+import { useEffect, useState } from 'react'
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const router = useRouter()
+  const [ready, setReady] = useState(false)
+  useEffect(() => {
+    async function load() {
+      for (const font of document.fonts.values()) {
+        await font.load()
+      }
+    }
+    load().then(()=>{
+      setReady(true)
+    });
+  }, [])
+  if (!ready) return <></>
   return <>
     <DefaultSeo
       additionalLinkTags={[
