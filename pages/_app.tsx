@@ -7,9 +7,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   const [ready, setReady] = useState(false)
   useEffect(() => {
     const promises: Promise<any>[] = [];
-    for (const font of document.fonts.values()) {
-      promises.push(font.load())
-    }
+    document.fonts.forEach((f)=>{
+      promises.push(f.load())
+    })
     Promise.all(promises).then(() => {
       setReady(true)
     })
