@@ -14,6 +14,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 	const project = await fetchProject(slug);
 
 	return {
+		revalidate: 10,
 		props: {
 			project
 		},

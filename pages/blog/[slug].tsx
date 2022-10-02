@@ -15,6 +15,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 	const post = await fetchBlogPost(slug);
 
 	return {
+		revalidate: 10,
 		props: {
 			post,
 		},
