@@ -62,11 +62,10 @@ function MyApp({ Component, pageProps }: AppProps) {
     }}
 
   />
-  if (!ready) return <>{seo}</>
-  return <>
+  return <div id={ready ? "ready" : "not-ready"}>
     {seo}
     <Component {...pageProps} />
-  </>
+  </div>
 }
 
 export default MyApp

@@ -37,3 +37,11 @@ html {
   font-family: Manrope;
   font-size: 40pt;
 }
+
+#ready {
+  visibility: visible;
+}
+
+#not-ready {
+  visibility: hidden;
+}
