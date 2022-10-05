@@ -50,12 +50,12 @@ const ProjectPage: FC<Props> = ({ project }) => {
 				}}
 			/>
 			<h1 id="title">{project.title}</h1>
-            <iframe src={project.embed} style={{
-                width: "95vw",
-                border: "none",
-                maxHeight: "100vh",
-                height: "56.25vw"
-            }}></iframe>
+			<iframe src={project.embed} style={{
+				width: "95vw",
+				border: "none",
+				maxHeight: "100vh",
+				height: "56.25vw"
+			}}></iframe>
 			<div style={{ marginLeft: "5vw", marginRight: "5vw" }}>
 				<MDContent
 					content={project.description.markdown}
